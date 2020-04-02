@@ -1,0 +1,78 @@
+npm install create-react-app
+npx create-react-app myFirstApp
+cd myFirsrtApp
+npm start
+localhost:3000
+
+
+VirtualDomMemory
+Use it to before rendering to browser
+Does the changes, what need to be changed
+
+Using plain js
+
+<!DOCTYPE html>
+<html>
+<script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+<body>
+  
+<div id="mydiv"></div>
+
+<script type="text/babel">
+class Hello extends React.Component {
+  render() {
+    return <h1>Hello World!</h1>
+  }
+}
+
+ReactDOM.render(<Hello />, document.getElementById('mydiv'))
+</script>
+
+</body>
+</html>
+
+
+ES6, arrow functions, let const var
+
+Class same as function used inside constroctor to initialize
+
+class Car {
+  constructor(name) {
+    this.brand = name;
+  }
+  
+  present() {
+    return 'I have a ' + this.brand;
+  }
+}
+
+mycar = new Car("Ford");
+mycar.present();
+
+Arrow
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<h1>Arrow Function</h1>
+
+<h2>Implicit Return</h2>
+
+<p>The arrow function expects a return value, and returns the value by default, without the <strong>return</strong> keyword.</p>
+
+<p id="demo"></p>
+  
+<script>
+hello = () => "Hello World!";
+
+document.getElementById("demo").innerHTML = hello();
+</script>
+
+</body>
+</html>
+
+
+
