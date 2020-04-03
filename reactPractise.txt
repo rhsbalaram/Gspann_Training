@@ -75,4 +75,103 @@ document.getElementById("demo").innerHTML = hello();
 </html>
 
 
+jsx
+const myelement = React.createElement('h1', {}, 'I do not use JSX!');
+
+ReactDOM.render(myelement, document.getElementById('root'));
+
+onst myelement = <h1>I Love JSX!</h1>;
+
+ReactDOM.render(myelement, document.getElementById('root'));
+const myelement = (
+  <ul>
+    <li>Apples</li>
+    <li>Bananas</li>
+    <li>Cherries</li>
+  </ul>
+);
+
+ReactComponents
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+class Car extends React.Component {
+  constructor() {
+    super();
+    this.state = {color: "red"};
+  }
+  render() {
+    return <h2>I am a {this.state.color} Car!</h2>;
+  }
+}
+
+ReactDOM.render(<Car />, document.getElementById('root'));
+
+props
+To send props into components
+const myelement = <Car brand="Ford" />;
+class Car extends React.Component {
+  render() {
+    return <h2>I am a {this.props.brand}!</h1>;
+  }
+}
+
+state:
+class Car extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      brand: "Ford",
+      model: "Mustang",
+      color: "red",
+      year: 1964
+    };
+  }
+  render() {
+    return (
+      <div>
+        <h1>My {this.state.brand}</h1>
+        <p>
+          It is a {this.state.color}
+          {this.state.model}
+          from {this.state.year}.
+        </p>
+      </div>
+    );
+  }
+}
+ changeColor = () => {
+    this.setState({color: "blue"});
+  }
+  
+  Life Cycle :
+ constructor()
+getDerivedStateFromProps()
+render()
+componentDidMount()
+
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {favoritecolor: "red"};
+  }
+  static getDerivedStateFromProps(props, state) {
+    return {favoritecolor: props.favcol };
+  }
+  render() {
+    return (
+      <h1>My Favorite Color is {this.state.favoritecolor}</h1>
+    );
+  }
+}
+
+ReactDOM.render(<Header favcol="yellow"/>, document.getElementById('root'));
+
+ componentDidMount() {
+    setTimeout(() => {
+      this.setState({favoritecolor: "yellow"})
+    }, 1000)
+  }
+
 
